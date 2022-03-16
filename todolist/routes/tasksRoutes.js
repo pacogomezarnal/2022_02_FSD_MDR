@@ -9,11 +9,30 @@ const taskRoutes = express.Router();
 /**
  * @swagger
  * /tasks:
- *  get:
- *      description: DEvuelve tareas
- *      reponses:
- *          200:
- *              description: Exito
+ *   get:
+ *     summary: Lista de tareas
+ *     description: DEvuelve una lista de tareas
+ *     responses:
+ *       200:
+ *         description: lista de tareas
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 data:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: integer
+ *                         description: Id de la tarea
+ *                         example: 1
+ *                       description:
+ *                         type: string
+ *                         description: Descripcion corrta de la tarea
+ *                         example: Finalizar documentacion swagger
  */
 taskRoutes.get('/', taskConstroller.getAll);
 //router.get('/:id', taskConstroller.getById);
