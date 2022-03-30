@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import Tarea from './components/Tarea.js'
+import Navegador from './components/Navegador.js'
 import tareas from './data/tareas.js'
+import { Link } from "react-router-dom";
 
 function App() {
   return (
+  <div>
+    <Navegador/>
     <div class="container bodygeeks">
       <div class="row">
         <div class="col-4">
@@ -18,6 +22,7 @@ function App() {
         </div>
       </div>      
     </div>
+  </div>
   );
 }
 
