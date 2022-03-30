@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.geeks{
+  background-color: #ef494f;
+}
+.menugeeksitem{
+  padding-top: 15px;
+  font-size: 38px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

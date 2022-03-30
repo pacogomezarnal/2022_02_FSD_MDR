@@ -13,7 +13,7 @@ const swDocument =
     {
       "name": "tareas",
       "description": "Tareas planificadas"
-    },
+    }
   ],
   "paths": {
     "/tareas": {
@@ -35,11 +35,7 @@ const swDocument =
             }
           },
           "400": {
-            "description": "Invalid ID supplied",
-            "content": {}
-          },
-          "404": {
-            "description": "Pet not found",
+            "description": "Error en consulta",
             "content": {}
           }
         },

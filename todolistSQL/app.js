@@ -10,7 +10,7 @@ import swaggerUi from "swagger-ui-express"
 
 /*Carga de variables de configuracion*/
 dotenv.config();
-import swDocument from "./config/openapi_v2.js"
+import swDocument from "./config/openapi.js"
 /*Rutas*/
 import tareaRoutes from "./routes/tareaRoutes.js"
 import usuarioRoutes from "./routes/usuarioRoutes.js"
