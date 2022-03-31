@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet  } from "react-router-dom";
-import Barra from '../components/Barra.js'
 import Tabla from '../components/Tabla.js'
 
 export default function ListarTareas() {
@@ -28,7 +27,6 @@ export default function ListarTareas() {
       }, []);
     return (
     <div>
-        <Barra/>
         <div class="container bodygeeks">
             <h2>Listar Tareas</h2>
             {tareasBool && <Tabla cabecera={cabecera} datos={tareas}/>}

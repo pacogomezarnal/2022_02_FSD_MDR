@@ -16,9 +16,10 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}/>
-      <Route path="/tareas" element={<ListarTareas />} />
-      <Route path="/tareas/:invoiceId" element={<DetalleTarea />} />
+      <Route path="/" element={<App />}>
+        <Route path="tareas" element={<ListarTareas />} />
+        <Route path="tareas/:idtarea" element={<DetalleTarea />} />
+      </Route>
     </Routes>
   </BrowserRouter>,
   rootElement
