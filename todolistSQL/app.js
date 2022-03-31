@@ -4,6 +4,7 @@
 */
 /*Modulos necesarios arranque servidor*/
 import express from "express"; //Framework y servidor
+import cors from "cors";
 import dotenv from "dotenv"; //Variables de entorno
 import sequelize from "./config/db.js"
 import swaggerUi from "swagger-ui-express"
@@ -29,6 +30,7 @@ try {
 /*Configuración de servidor y middlewares*/
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.use('/', indexRoutes);
 app.use('/tareas', tareaRoutes);
 app.use('/usuarios', usuarioRoutes);

@@ -10,7 +10,6 @@ const Tarea = props => {
     const subTareas = subtareasArr.map((item) =>
         <li key={item.id}>{item.nombre}</li>
     )
-    console.log(subTareas);
     return(
     <div class="card">
         <div class="card-body">

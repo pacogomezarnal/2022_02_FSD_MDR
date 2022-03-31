@@ -8,20 +8,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import NuevaTarea from "./routes/nuevatarea";
+//Rutas Tareas
+import ListarTareas from "./routes/listartareas.js";
+import DetalleTarea from "./routes/detalletarea.js";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="nuevatarea" element={<NuevaTarea />} />
+      <Route path="/" element={<App />}/>
+      <Route path="/tareas" element={<ListarTareas />} />
+      <Route path="/tareas/:invoiceId" element={<DetalleTarea />} />
     </Routes>
   </BrowserRouter>,
   rootElement
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
