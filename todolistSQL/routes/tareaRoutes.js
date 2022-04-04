@@ -10,6 +10,6 @@ tareaRoutes.get('/', tareaConstroller.getAllTasks);
 tareaRoutes.get('/usuarios/', tareaConstroller.getAllWithUsers);
 tareaRoutes.get('/:id', tareaConstroller.getTaskById);
 tareaRoutes.post('/',tareaConstroller.insertTask);
-//router.put('/:id', taskConstroller.updateTask);
+tareaRoutes.put('/:id', tareaConstroller.updateTask);
 
 export default tareaRoutes;

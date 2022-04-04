@@ -1,23 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet  } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import Tabla from '../components/Tabla.js'
+import FormDetalle from '../components/FormDetalle.js'
 
 
 export default function DetalleTarea() {
 
     const [tarea, setTarea] = useState([]);
+    const [update, setUpdate] = useState(false);
     const [tareasBool, settareasBool] = useState(false);
-    const cabecera=["idtarea","nombre","descripcion","fecha_ini","estimada",""];
 
     const getTarea = async () => {
-        const tareasResults =
-            await fetch(`http://localhost:3000/tareas/`+params.idtarea, {
-            method: "GET",
-         });
-        const tareasData = await tareasResults.json();
-        setTarea(tareasData);
-        settareasBool(true);
+        let tareaData = {
+          "idtarea": 0,
+          "nombre": "",
+          "descripcion": "",
+          "fecha_ini": "",
+          "estimada": 0
+        };
+        if(params.idtarea!=0){
+          const tareaResult =
+              await fetch(`http://localhost:3000/tareas/`+params.idtarea, {
+              method: "GET",
+          });
+          tareaData = await tareaResult.json();
+        }
+          setTarea(tareaData);
+          if(params.ver=="editar") setUpdate(true);
+          settareasBool(true);
     }
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
@@ -31,7 +41,8 @@ export default function DetalleTarea() {
     return (
         <div>
             <div class="container bodygeeks">
-                <h2>Detalle de tarea: {params.idtarea}</h2>
+                <h2>Detalle de tarea: {tarea.nombre}</h2>
+                {tareasBool && <FormDetalle tarea={tarea} update={update}/>}
             </div>
         </div>
     );

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet  } from "react-router-dom";
 import Tabla from '../components/Tabla.js'
+//Redux
+import {useSelector} from 'react-redux';
 
 export default function ListarTareas() {
 
     const [tareas, setTareas] = useState([]);
     const [tareasBool, settareasBool] = useState(false);
     const cabecera=["idtarea","nombre","descripcion","fecha_ini","estimada",""];
+    const usuario=useSelector(state=>state);
 
     const getTareas = async () => {
         const tareasResults =

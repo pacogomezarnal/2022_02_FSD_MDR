@@ -47,6 +47,20 @@ const TareaController={
             console.error(error);
             res.status(500).send({message:"Problem returning tasks",error});
         }
+    },
+    async updateTask(req,res){
+        try{
+            console.log(req.body);
+            const tarea = await Tarea.update(req.body, {
+                where: {
+                  idtarea: req.params['id']
+                }
+            });
+            res.status(200).send("OK");
+        }catch (error){
+            console.error(error);
+            res.status(500).send({message:"Problem returning tasks",error});
+        }
     }
 }
 
