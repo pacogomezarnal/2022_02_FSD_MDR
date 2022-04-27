@@ -49,7 +49,7 @@ const FormDetalle = props => {
         <form class="row g-3" onSubmit={(e) => formSubmit(e)}>
             <div class="col-md-2">
             <label for="idtarea" class="form-label">id</label>
-            <input type="text" class="form-control" id="idtarea" defaultValue={tarea.idtarea} disabled={!update}/>
+            <input type="text" class="form-control" id="idtarea" value={tarea.idtarea} disabled/>
             </div>
             <div class="col-md-6">
             <label for="nombre" class="form-label">nombre</label>

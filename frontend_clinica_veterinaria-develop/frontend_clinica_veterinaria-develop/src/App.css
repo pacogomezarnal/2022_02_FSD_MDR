@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  color: white;
+  min-height: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-size: cover;
+  min-height: 100vh;
+}

@@ -1,0 +1,77 @@
+@import './reset';
+@import './variables';
+
+@mixin textoNormal($tam: "regular",$color:#000) {
+    color:$color;
+    font-weight: map-get($tamanyoFuente,$tam);
+}
+
+@mixin mobile{
+    @media(max-width:800px){
+        @content;
+    }
+}
+
+body{
+    background:$colorPrimario;
+    color: $colortexto;
+}
+#cabecera{
+    min-height: 35px;
+    background:$colorSecundario;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    font-family: 'Bakbak One', cursive;
+    nav{
+        @include textoNormal("regular",$colortextoNav);
+    }
+}
+
+.contenido{
+    margin:0 auto;
+    width: 80%;
+    .productos{
+        display:flex;
+        flex-direction: row;
+        @include mobile{
+            flex-direction: column;
+        }
+    }
+}
+
+.error{
+    margin-top: $margenTopDefecto;
+    p{
+        background: red;
+        color:$colortexto;
+    }
+}
+
+.formulario{
+    margin-top: $margenTopDefecto;
+
+    input{
+        margin-top: $margenTopDefecto;
+    }
+}
+
+
+p{
+    @include textoNormal("bold",$colortexto);
+}
+
+.elemento{
+    margin-top: $margenTopDefecto;
+    label{
+        @include textoNormal("medium",$colortexto);
+        display: block;
+        @include mobile{
+            display: inline;
+        }
+    }
+
+    input{
+        border: 1px;
+    }
+}
